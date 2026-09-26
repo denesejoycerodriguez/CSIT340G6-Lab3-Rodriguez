@@ -1,5 +1,5 @@
 const Header = (props) => {
-  return <h1>{props.course}</h1>
+  return <h1>{props.course.name}</h1>
 }
 
 const Part = (props) => {
@@ -35,30 +35,31 @@ const Footer = (props) => {
 }
 
 const App = () => {
-  const course = 'Industry Elective'
-
-  const parts = [
-    {
-      name: 'Information Management 2',
-      units: 3
-    },
-    {
-      name: 'Data Analytics 1',
-      units: 3
-    },
-    {
-      name: 'Project Management for IT',
-      units: 3
-    }
-  ]
+  const course = {
+    name: 'Industry Elective',
+    parts: [
+      {
+        name: 'Information Management 2',
+        units: 3
+      },
+      {
+        name: 'Data Analytics 1',
+        units: 3
+      },
+      {
+        name: 'Project Management for IT',
+        units: 3
+      }
+    ]
+  }
 
   const footerInfo = 'Denese Joyce S. Rodriguez - CSIT340 - G6'
 
   return (
     <div>
       <Header course={course} />
-      <Content parts={parts} />
-      <Total parts={parts} />
+      <Content parts={course.parts} />
+      <Total parts={course.parts} />
       <Footer info={footerInfo} />
     </div>
   )
